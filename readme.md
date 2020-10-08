@@ -6,8 +6,15 @@ mkdir helloworld
 cd helloworld
 code .
 ```
+- New file with `.cpp`/`.h` extention
 
-- New file with `.cpp` extention
+# Build cmd
+
+```
+g++ *.cpp -o main.out
+```
+
+#### Build using visual studio
 - `Terminal` -> `Configure default build tasks` -> `g++ build active file`
 - Add `.sh` to `"${fileDirname}/${fileBasenameNoExtension}"`  in line 12
 - Come back to `.cpp` file
