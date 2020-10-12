@@ -38,6 +38,7 @@ int main () // This the main entry of the program
 
 
     while(getline(cin, buf)){
+        // Initialize first fraction
         std::istringstream ssin(buf);
         ssin >> numerator;
         ssin >> seperator;
