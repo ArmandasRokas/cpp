@@ -10,22 +10,25 @@ int main(void){
     set<string> s;
     
     d.insert_words("car","bil");
-    cout << d.get_word("english","car") << endl;
-    cout << d.get_word("danish","bil") << endl ;
+
+  //  cout << d.get_word("english","car") << endl;
+  //  cout << d.get_word("danish","bil") << endl ;
     
     d.insert_synonym("english","car","auto");
     
-    s = d.get_synonyms("english","auto");
+/*   s = d.get_synonyms("english","auto");
     for(set<string>::iterator it = s.begin();
         it != s.end(); it++)
         cout << *it << " ";
     cout << endl;
-    
+  */  
+
+   
     s = d.translate("danish","bil");
     for(set<string>::iterator it = s.begin();
         it != s.end(); it++)
         cout << *it << " ";
     cout << endl;
-    
+
     return 0;
 }

@@ -20,7 +20,7 @@ int main(void){
 
    // x.commute();
    // x.print(); cout << endl;
-    for(unsigned int i=0;i<100000000;i++){
+    for(unsigned int i=0;i<100000000000000;i++){
     x.associate_left();
     //x.print(); cout << endl;
 

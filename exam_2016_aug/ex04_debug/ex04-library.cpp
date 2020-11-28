@@ -42,8 +42,6 @@ int Monoid<C>::constants(void){
 // Exercise 4(c)
 template <class C>
 void Monoid<C>::commute(void){
-    if(this->m1==nullptr || this->m2==nullptr)
-        return;
     // Swap with pointers
     Monoid<C> temp = *this->m1;
     *this->m1 = *this->m2;
@@ -53,11 +51,7 @@ void Monoid<C>::commute(void){
 // Exercise 4(d)
 template <class C>
 void Monoid<C>::associate_left(void){
-    if(this->m1 == nullptr || this->m2 == nullptr 
-    || this->m2->m1 == nullptr  || this->m2->m2 == nullptr)
-        return;
-    // The version in the solutions is MUCH FASTER and my own, because it is power consuming to create objects. 
-    // However it is more readable
+    //Monoid<C> * temp_m1 = *this->m1;
     Monoid<C> temp_m1 = *this->m1;
     Monoid<C> temp_m2 = *this->m2;
     delete this->m1;
@@ -69,9 +63,6 @@ void Monoid<C>::associate_left(void){
 // Exercise 4(e)
 template <class C>
 void Monoid<C>::associate_right(void){
-        if(this->m1 == nullptr || this->m2 == nullptr 
-    || this->m1->m1 == nullptr  || this->m1->m2 == nullptr)
-        return;
     Monoid<C> temp_m1 = *this->m1;
     Monoid<C> temp_m2 = *this->m2;
     delete this->m1;
@@ -156,8 +147,8 @@ Monoid<C>::Monoid(Monoid & m){
 
 template <class C>
 Monoid<C> & Monoid<C>::operator=(Monoid<C> & m){
-    constant = m.constant;
     if (m.m1 == nullptr){
+    constant = m.constant;
         m1 = nullptr;
         m2 = nullptr;
         return * this;

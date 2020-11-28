@@ -21,7 +21,6 @@ private:
     map<string,string> danish2english;
     map<string,set<string> > english_synonyms;
     map<string,set<string> > danish_synonyms;
-    
 };
 
 #endif
