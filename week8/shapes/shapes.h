@@ -18,6 +18,7 @@ class Shape{
 class Rectangle: public Shape{
     public:
         Rectangle(double h, double w);
+        Rectangle operator+(Rectangle& r);
 };
 
 class Square: public Shape{

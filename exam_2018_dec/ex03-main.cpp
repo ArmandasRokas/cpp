@@ -28,6 +28,6 @@ int main() {
 		cout << "tsc.addMeasurement(\"K\", 50); FAILED" << endl;
 	}
 	tsc.print();
-	
+
 	return 0;
 }

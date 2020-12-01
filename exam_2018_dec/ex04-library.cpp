@@ -12,35 +12,48 @@ void Node<T>::printNode(){
 
 //Exercise 4 (a) Check and correct if necessary
 template<class T>
-Node<T>::Node(string name, T value){
-}
+Node<T>::Node(string name, T value): name(name), value(value) {}
 
 //Exercise 4 (b) Implement getName, getValue, and addChild
 template<class T>
 string Node<T>::getName(){
-	//put your code here
+	return this->name;
 }
 
 template<class T>
 T Node<T>::getValue(){
-	//put your code here
+	return this->value;
 }
 
 template<class T>
 void Node<T>::addChild(Node<T> * child){
-	//put your code here
+	this->children.push_back(child);
 }
 
 //Exercise 4 (c) Implement this method
 template<class T>
 void Node<T>::printLeafNodes(){
-	//put your code here
+	if(this->children.empty()){
+		cout << this->name << " " << this->value << " ";
+	} else {
+		for(Node<T> * child: this->children){
+			child->printLeafNodes();
+		}
+	}
 }
 
 //Exercise 4 (d) Implement this method
 template<class T>
 int Node<T>::countMembersOfSubTree(){
-	//put your code here
+	if(this->children.empty()){
+		return 1;
+	} else {
+		int res=0;
+		for(Node<T> * child: this->children){
+			res += child->countMembersOfSubTree();
+		}
+		return 1 + res; 
+	}
 }
 
 //Do not modify

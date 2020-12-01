@@ -15,6 +15,7 @@ using std::endl;
 void reverse_list(){
     // Arrange
     List l;
+    l.insert(1);
     l.insert(2);
     l.insert(3);
     l.insert(4);
@@ -23,7 +24,7 @@ void reverse_list(){
     l.reverse();
 
     // Assert
-    string expected = "4 3 2";
+    string expected = "4 3 2 1";
     string actual = l.toString();
     if(actual.compare(expected) != 0)
         cerr << "Test failed. Acual: " + actual + ". Expected: " + expected << endl;
@@ -51,7 +52,17 @@ void given_insert_return_not_empty_list(){
         cerr << "Test failed. Acual: " + actual + ". Expected: " + expected << endl;
 }
 
+void memory_leak_test(){
+    for(unsigned int i=0; i<100000000; i++){
+        List l;
+        l.insert(2);
+        l.insert(3);
+        l.insert(4);
+    }
+}
+
 void testDriver(){
+  //  memory_leak_test();
     given_insert_return_not_empty_list();
     given_insert_two_numbers_return_not_empty_list();
     reverse_list();

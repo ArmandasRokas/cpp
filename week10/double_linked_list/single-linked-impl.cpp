@@ -44,36 +44,29 @@ void List::insert(int n){
 }
 
 void List::reverse(){
+    // Empty
     if(this->first == NULL){
         return;
     }
-    Node * last = double_linked_list_helper::last(this->first);
-    this->first = last;
-    last->next = last->prev;
-    last->prev = NULL; 
+    // One element
+//    if(this->first->next == NULL){
+//        return;
+//    }
+    // Two elements
     
-    
-    Node * curr = last->next;
-
-    while(curr != NULL){
-        Node * original_prev = curr->prev;  
-        curr->prev = curr->next;
-        curr->next = original_prev;
-        
-        curr = curr->next;
+  //  this->first->next = NULL;
+    Node * curr = this->first;
+    Node * next = curr->next;
+    curr->next = NULL;
+    while(next != NULL){
+        Node * two_times_next = next->next;
+        next->next = curr;
+        this->first = next;
+        curr = next;
+        next = two_times_next;
     }
-
-    /*this->first =last;
-    last->next = last->prev;
-    last->prev = NULL; 
-    */
-
-   /* Node * curr = last->next;
-
-    Node * second_last = last->next;
-    second_last->prev = second_last->next;
-    second_last->next = NULL; 
-*/
+    
+    
 
 }
 

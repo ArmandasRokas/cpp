@@ -13,7 +13,7 @@ int main() {
 	Node<string> *Frida = new Node<string>("Frida","01/12/1998");
 	Node<string> *Gabriel = new Node<string>("Gabriel","01/02/1998");
 	Node<string> *Hugo = new Node<string>("Hugo","01/01/2018");
-	
+
 	cout << "Alice's name is: " << Alice->getName() << endl;
 	cout << "Alice's value is: " << Alice->getValue() << endl;
 	
@@ -56,6 +56,6 @@ int main() {
 	cout << endl << "Frida: ";
 	cout << Frida->countMembersOfSubTree();
 	cout << endl;
-
+	
 	return 0;
 }

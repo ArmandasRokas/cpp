@@ -8,10 +8,10 @@ int attack(int &Z, priority_queue<int> &A, int num_attacks);
 
 int main() {
 	int T;
-	vector<int>Zs; //Ns,
-	vector<priority_queue<int>> As;
 	cin >> T;
-	
+//	int* Zs = new int[T]; //Ns,
+//	priority_queue<int>* As = new priority_queue<int>[T];
+
 	for(int i=0; i<T; i++){
 		int N,Z;
 		cin >> N;
@@ -23,10 +23,18 @@ int main() {
 			A.push(Ai);
 		}
 	//	Ns.push_back(N);
-		Zs.push_back(Z);
-		As.push_back(A);
+	//	Zs.push_back(Z);
+	//	As.push_back(A);
+	//	Zs[i] = Z;
+	//	As[i] = A;
+		int num_attacks = attack(Z,A,0);
+		if(num_attacks<0){
+			cout << "Evacuate " << endl;
+		} else{
+			cout << num_attacks << " "  << endl;
+		}
 	}
-
+/*
 	for(int i=0; i<T; i++){
 		int num_attacks = attack(Zs[i],As[i],0);
 		if(num_attacks<0){
@@ -35,7 +43,7 @@ int main() {
 			cout << num_attacks << " "  << endl;
 		}
 	}
-
+*/
 
 
 //	cout << T << " " << N << " " << Z << endl; 
@@ -45,9 +53,8 @@ int main() {
 //	}	
 
 	cout << endl;
-
-
-	cout << endl;
+//	delete[] Zs;
+//	delete[] As;
 	return 0;
 }
 

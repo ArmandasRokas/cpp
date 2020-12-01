@@ -30,6 +30,18 @@ double Shape::perimeter(){
 }
 
 Rectangle::Rectangle(double h, double w): Shape(h,w){}
+Rectangle Rectangle::operator+(Rectangle & r){
+    Rectangle result(0,0);
+    if(this->h != r.h){
+        result.h = -1;
+        result.w = -1;
+    } else {
+        result.h = this->h;
+        result.w = this->w + r.w;
+    }
+    return result;
+}
+
 Square::Square(double w): Shape(w,w){}
 
 
