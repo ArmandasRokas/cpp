@@ -19,14 +19,35 @@ void printSet(set<string> s){
 void computeLeaves(Node *n, set<string> & leaves){
   if(n->left == nullptr && n->right == nullptr){
     leaves.insert(n->name);
-  }
-  else{
+    return;
+  } 
+  if(n->left != nullptr){
     computeLeaves(n->left,leaves);
+  } 
+
+  if(n->right != nullptr){
     computeLeaves(n->right,leaves);
   }
 }
 
 //Exercise 2 (b) Implement this function
-int countDescendants(Node * n){
-  //Put your code here
+int countNodes(Node * n) {
+ if(n->left == nullptr && n->right == nullptr){
+    return 1;
+  } 
+  int res = 0;
+  if(n->right != nullptr){
+    res += countNodes(n->right);
+  }
+  if(n->left != nullptr){
+    res += countNodes(n->left);
+  }
+  return 1 + res;
 }
+
+int countDescendants(Node * n){
+    int num_nodes = countNodes(n);
+    return num_nodes-1; 
+}
+
+
