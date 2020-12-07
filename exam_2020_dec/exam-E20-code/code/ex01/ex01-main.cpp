@@ -6,7 +6,7 @@ int main() {
     Complex c = {3, 1};
     Complex d = {2, -2};
 
-    Complex **A = createMatrix(3, 3, c);
+    Complex **A = createMatrix(3, 3, d);
     cout << "Complex matrix A:" << endl;
     displayMatrix(A, 3, 3);
     cout << endl;
@@ -39,5 +39,6 @@ int main() {
     deleteMatrix(A, 3); deleteMatrix(B, 3);
     deleteMatrix(C, 2);
     deleteMatrix(R, 3); deleteMatrix(I, 3);
+  
     return 0;
 }

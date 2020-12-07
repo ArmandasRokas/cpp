@@ -8,7 +8,7 @@ int main() {
     Elem e2 = {4, 10, &e1};
     
     cout << "The RLE list is: " << endl;
-    displayRLEList(&e2);
+  //  displayRLEList(&e2);
     cout << endl;
 
     cout << "Its lenght is: " << length(&e2) << endl;
