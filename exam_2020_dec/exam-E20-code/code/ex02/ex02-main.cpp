@@ -27,5 +27,7 @@ int main() {
     displayRLEList(list2);
     cout << endl;
     
+    delete list2;
+    
     return 0;
 }

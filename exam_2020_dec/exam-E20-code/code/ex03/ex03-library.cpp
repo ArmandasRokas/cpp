@@ -34,7 +34,7 @@ bool SongDatabase::addSong(string title, string url, unsigned int score) {
     if(find(songs.begin(), songs.end(), title) != songs.end()){
         return false;
     }
-    if(score>10){
+    if(score>10 || score<0){
         return false;
     }
     songs.push_back(title);

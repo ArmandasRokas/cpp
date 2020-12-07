@@ -11,6 +11,16 @@ unsigned int length(Elem *list) {
     }
 }
 
+Elem::~Elem(){
+    Elem *curr = this;
+    Elem *next;
+    while(curr !=nullptr){
+        next = curr->next;
+        delete curr;
+        curr = next;
+    }
+}
+
 // Task 2(b).  Implement this function
 Elem* append(Elem *list, int v) {
 
@@ -46,6 +56,9 @@ Elem* append(Elem *list, int v) {
 
 // Task 2(c).  Implement this function
 Elem* buildRLEList(int *data, unsigned int n) {
+    if(n<1){
+        return nullptr;
+    }
     Elem * first = new Elem();
     first->next = nullptr;
     first->times = 1;

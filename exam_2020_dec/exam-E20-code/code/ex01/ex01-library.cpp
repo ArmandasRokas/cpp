@@ -54,30 +54,12 @@ void multMatrix(Complex **A, Complex **B, Complex **C,
     for(int i=0; i<m; i++){
         for(int j=0;j<p;j++){
             Complex sum{0,0};
-
-            for(int column_A=0; column_A < n; column_A++){
-            //    for(int row_B=0; row_B < n; row_B++){
-                  //  sum = add(sum, mult(A[i][column_A],B[row_B][j] ));
-                  sum = add(sum, mult(A[i][column_A],B[column_A][j] )); 
-              //  }
+            for(int z=0; z < n; z++){
+                  sum = add(sum, mult(A[i][z],B[z][j])); 
             }
             C[i][j] = sum; 
-        
         }
     }
-    /*
-    C[0][0] =add(mult(A[0][0],B[0][0]), mult(A[0][1], B[1][0]));
-    C[0][1] =add(mult(A[0][0],B[0][1]), mult(A[0][1], B[1][1]));
-    C[0][2] =add(mult(A[0][0],B[0][2]), mult(A[0][1], B[1][2]));
-
-    C[1][0] =add(mult(A[1][0],B[0][0]), mult(A[1][1], B[1][0]));
-    C[1][1] =add(mult(A[1][0],B[0][1]), mult(A[1][1], B[1][1]));
-    C[1][2] =add(mult(A[1][0],B[0][2]), mult(A[1][1], B[1][2]));
-
-    C[2][0] =add(mult(A[2][0],B[0][0]), mult(A[2][1], B[1][0]));
-    C[2][1] =add(mult(A[2][0],B[0][1]), mult(A[2][1], B[1][1]));
-    C[2][2] =add(mult(A[2][0],B[0][2]), mult(A[2][1], B[1][2]));
-    */
 }
 
 // Do not modify
